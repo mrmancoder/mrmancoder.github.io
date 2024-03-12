@@ -16,26 +16,25 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这是一篇测试文章这是一篇测试文章">
+    <meta name="description" content="1. 布隆过滤器大致介绍： 布隆过滤器（Bloom Filter）是1970年由布隆提出的。它实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都比一般的算法要好的多，缺点是有一定的误识别率和删除困难。 简单来说，布隆过滤器就是用来检查一个元素是否在一个集合里的，接下来就来具体分析下布隆过滤器。  2. 底层结构： 布隆过">
 <meta property="og:type" content="article">
-<meta property="og:title" content="testFirst">
-<meta property="og:url" content="http://example.com/2024/03/11/testFirst/index.html">
+<meta property="og:title" content="布隆过滤器到底是个啥">
+<meta property="og:url" content="http://example.com/2024/03/12/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E5%95%A5/index.html">
 <meta property="og:site_name" content="mrmancoder">
-<meta property="og:description" content="这是一篇测试文章这是一篇测试文章">
+<meta property="og:description" content="1. 布隆过滤器大致介绍： 布隆过滤器（Bloom Filter）是1970年由布隆提出的。它实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都比一般的算法要好的多，缺点是有一定的误识别率和删除困难。 简单来说，布隆过滤器就是用来检查一个元素是否在一个集合里的，接下来就来具体分析下布隆过滤器。  2. 底层结构： 布隆过">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2024/03/11/testFirst/test.png">
-<meta property="og:image" content="http://example.com/2024/03/11/testFirst/test.png">
-<meta property="og:image" content="http://example.com/images/test.png">
-<meta property="article:published_time" content="2024-03-11T08:34:41.000Z">
-<meta property="article:modified_time" content="2024-03-11T08:44:59.794Z">
+<meta property="og:image" content="d:\blog\hexo-blog\source_posts\%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E5%95%A5\%E5%BA%95%E5%B1%82%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="d:\blog\hexo-blog\source_posts\%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E5%95%A5\%E8%AF%AF%E5%88%A4%E5%88%86%E6%9E%90.png">
+<meta property="article:published_time" content="2024-03-12T06:17:23.000Z">
+<meta property="article:modified_time" content="2024-03-12T06:23:36.465Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="原创">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2024/03/11/testFirst/test.png">
+<meta name="twitter:image" content="d:\blog\hexo-blog\source_posts\%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E5%95%A5\%E5%BA%95%E5%B1%82%E7%BB%93%E6%9E%84.png">
   
   
   
-  <title>testFirst - mrmancoder</title>
+  <title>布隆过滤器到底是个啥 - mrmancoder</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,7 +229,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="testFirst"></span>
+            <span id="subtitle" data-typed-text="布隆过滤器到底是个啥"></span>
           
         </div>
 
@@ -241,8 +240,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-11 16:34" pubdate>
-          2024年3月11日 下午
+        <time datetime="2024-03-12 14:17" pubdate>
+          2024年3月12日 下午
         </time>
       </span>
     
@@ -253,7 +252,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          16 字
+          939 字
         
       </span>
     
@@ -264,7 +263,7 @@
         
         
         
-          1 分钟
+          8 分钟
         
       </span>
     
@@ -309,16 +308,54 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">testFirst</h1>
+            <h1 id="seo-header">布隆过滤器到底是个啥</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="这是一篇测试文章"><a href="#这是一篇测试文章" class="headerlink" title="这是一篇测试文章"></a>这是一篇测试文章</h1><h4 id="这是一篇测试文章-1"><a href="#这是一篇测试文章-1" class="headerlink" title="这是一篇测试文章"></a>这是一篇测试文章</h4><img src="/2024/03/11/testFirst/test.png" srcset="/img/loading.gif" lazyload class="" title="图片引用方法一">
-
-<p> <img src="/2024/03/11/testFirst/test.png" srcset="/img/loading.gif" lazyload alt="图二实例"></p>
-<p> <img src="/images/test.png" srcset="/img/loading.gif" lazyload alt="图片引用方法三"></p>
-
+                <h2 id="1-布隆过滤器大致介绍："><a href="#1-布隆过滤器大致介绍：" class="headerlink" title="1. 布隆过滤器大致介绍："></a>1. 布隆过滤器大致介绍：</h2><ul>
+<li>布隆过滤器（Bloom Filter）是1970年由布隆提出的。它实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都比一般的算法要好的多，缺点是有一定的误识别率和删除困难。</li>
+<li>简单来说，布隆过滤器就是用来<strong>检查一个元素是否在一个集合里的</strong>，接下来就来具体分析下布隆过滤器。</li>
+</ul>
+<h2 id="2-底层结构："><a href="#2-底层结构：" class="headerlink" title="2. 底层结构："></a>2. 底层结构：</h2><ul>
+<li>布隆过滤器的底层数据结构是位图，可以理解为只存储二进制数值的数组，每个位置只能存放0或1，<strong>0表示不存在，1表示存在</strong>。</li>
+</ul>
+<p><img src="D:\blog\hexo-blog\source_posts\布隆过滤器到底是个啥\底层结构.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="3-在缓存穿透中的应用："><a href="#3-在缓存穿透中的应用：" class="headerlink" title="3. 在缓存穿透中的应用："></a>3. 在缓存穿透中的应用：</h2><h3 id="什么是缓存穿透"><a href="#什么是缓存穿透" class="headerlink" title="什么是缓存穿透"></a>什么是缓存穿透</h3><ul>
+<li>在实际的开发中，难免会遇到数据缓存在redis中，当用户访问数据的时候，都是先请求缓存，那么假如要查询的数据在缓存中和数据库中都不存在，当缓存中查询不出数据的时候，会直接查询数据库，就会造成大量的请求作用到数据库，会对数据库造成很大的压力，容易出现宕机的情况，像恶意攻击，就会出现这种情况，请求查询大量不存在的key，极容易发生宕机，这种情况就叫做缓存穿透。</li>
+</ul>
+<h3 id="缓存穿透的解决办法"><a href="#缓存穿透的解决办法" class="headerlink" title="缓存穿透的解决办法"></a>缓存穿透的解决办法</h3><ol>
+<li>缓存空数据：将从mysql中查询到的空数据缓存到redis中，当用户再来查询的时候，直接查询到redis中的空数据，这种方法比较简单，但是会消耗过大的内存空间；</li>
+<li>第二种方案就是布隆过滤器，当请求查询的是不存在的key值，布隆过滤器会直接返回，不会作用到数据库，这一点是本文重点，接下来会具体讲解。</li>
+</ol>
+<h3 id="布隆过滤器的原理"><a href="#布隆过滤器的原理" class="headerlink" title="布隆过滤器的原理"></a>布隆过滤器的原理</h3><p><strong>添加数据过程</strong></p>
+<ul>
+<li>会先通过k个Hash函数计算hash值；</li>
+<li>然后每个hash映射到不同的数组下标，在下标对应的位置将0改为1，表示元素存在；</li>
+</ul>
+<p><strong>查询数据过程</strong></p>
+<ul>
+<li>同样先通过k个Hash函数计算hash值；</li>
+<li>然后判断每个hash值对应的二进制数字；</li>
+<li>如果所有数字都为1，则说明查询的数据存在，如果有一个为0，则说明数据不存在。</li>
+</ul>
+<p><strong>优点</strong></p>
+<ol>
+<li>存储的是二进制数值，占用空间小；</li>
+<li>插入和删除的速度快，优点类似哈希表的结构，操作k个数值，时间复杂度为O(K)；</li>
+</ol>
+<p><strong>缺点</strong></p>
+<ul>
+<li>可能存在误判：考虑这样一种情况，假如我想要添加两个数据A和B，分别计算他们对应的hash值，如果计算的hash值相同，那他们会同时将某个位置的数值置为1，这时候就不知道此位置的1代表的是什么数据了。<ul>
+<li>接着上面继续分析，如果没有存数据B，此时又想去查询数据B，计算的hash值和A计算的hash值相同，就会得到数据B存在的假现象（此时只有A存在，只不过他们计算的hash相同），形成误判，看图就分析清楚了。</li>
+</ul>
+</li>
+</ul>
+<p><img src="D:\blog\hexo-blog\source_posts\布隆过滤器到底是个啥\误判分析.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>可能存在误删：可以和上面的a一起考虑，假设现在已经添加了数据A和B，但是我想要删除数据A，就会将A计算的hash所对应的索引位置的value置为0，此时B也会被标志删除，因为他们的hash值相同。</li>
+</ul>
+<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
                 
               </div>
             
@@ -336,7 +373,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  <a href="/categories/Redis/" class="category-chain-item">Redis</a>
   
   
 
@@ -363,8 +400,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>testFirst</div>
-      <div>http://example.com/2024/03/11/testFirst/</div>
+      <div>布隆过滤器到底是个啥</div>
+      <div>http://example.com/2024/03/12/布隆过滤器到底是个啥/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +413,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月11日</div>
+          <div>2024年3月12日</div>
         </div>
       
       
@@ -408,18 +445,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/12/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E5%95%A5/" title="布隆过滤器到底是个啥">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">布隆过滤器到底是个啥</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/11/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2024/03/11/testFirst/" title="testFirst">
+                        <span class="hidden-mobile">testFirst</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
