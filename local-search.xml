@@ -29,31 +29,6 @@
   
   
   <entry>
-    <title>testFirst</title>
-    <link href="/2024/03/11/testFirst/"/>
-    <url>/2024/03/11/testFirst/</url>
-    
-    <content type="html"><![CDATA[<h1 id="这是一篇测试文章"><a href="#这是一篇测试文章" class="headerlink" title="这是一篇测试文章"></a>这是一篇测试文章</h1><h4 id="这是一篇测试文章-1"><a href="#这是一篇测试文章-1" class="headerlink" title="这是一篇测试文章"></a>这是一篇测试文章</h4><img src="/2024/03/11/testFirst/test.png" class="" title="图片引用方法一"><p> <img src="/2024/03/11/testFirst/test.png" alt="图二实例"></p><p> <img src="/images/test.png" alt="图片引用方法三"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>原创</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Hello World</title>
     <link href="/2024/03/11/hello-world/"/>
     <url>/2024/03/11/hello-world/</url>
