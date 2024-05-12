@@ -1499,6 +1499,17 @@ body {
 input::placeholder {
   color: var(--font-color);
 }
+#web_bg {
+  position: fixed;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  background: url(https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1712957412171-e91ae3f5801e?ixid=M3wyNjY4NDZ8MHwxfHRvcGljfHw2c01WalRMU2tlUXx8fHx8Mnx8MTcxNTIzNTk5N3w&ixlib=rb-4.0.3&w=2560&h=1440&fmt=webp);
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 h1,
 h2,
 h3,
