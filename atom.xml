@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>mrmancoder Blog</title>
+  <title>愤怒的土豆泥</title>
   
   <subtitle>Blog</subtitle>
-  <link href="https://mrmancoder.github.io/atom.xml" rel="self"/>
+  <link href="https://mrmancoder.top/atom.xml" rel="self"/>
   
-  <link href="https://mrmancoder.github.io/"/>
-  <updated>2024-05-12T07:34:01.662Z</updated>
-  <id>https://mrmancoder.github.io/</id>
+  <link href="https://mrmancoder.top/"/>
+  <updated>2024-05-22T09:30:19.157Z</updated>
+  <id>https://mrmancoder.top/</id>
   
   <author>
     <name>Mr.Man</name>
@@ -17,13 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux安装Docker</title>
+    <link href="https://mrmancoder.top/posts/96e9ca9a.html"/>
+    <id>https://mrmancoder.top/posts/96e9ca9a.html</id>
+    <published>2024-05-21T14:58:06.000Z</published>
+    <updated>2024-05-22T09:30:19.157Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-前置说明"><a href="#1-前置说明" class="headerlink" title="1. 前置说明"></a>1. <strong>前置说明</strong></h1><ul><li>本文使用阿里云ECS服务器，系统为Alibaba Cloud Linux 3.2104 LTS 64位，是完全兼容CentOS的。</li><li>CentOS安装Docker官网：<a href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></li></ul><h1 id="2-安装前卸载旧版本"><a href="#2-安装前卸载旧版本" class="headerlink" title="2. 安装前卸载旧版本"></a>2. <strong>安装前卸载旧版本</strong></h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure><ul><li>直接执行上面的命令，如果出现下面图片的效果，说明系统中没有Docker。</li></ul><p><img src="https://fb48e8e1.telegraph-image-bm7.pages.dev/file/76fb3ee8871ddd3dd62a4.png" alt=""></p><h1 id="3-执行安装"><a href="#3-执行安装" class="headerlink" title="3. 执行安装"></a>3. <strong>执行安装</strong></h1><ol><li><strong>安装yum-utils软件包</strong></li></ol><ul><li>该软件包是一个yum工具集（yum理解为一个包管理器），它提供了一些常用的命令和插件，以便管理和维护yum软件包管理器，其中的 <code>-y</code>表示安装过程中遇到的所有问题全都回答yes。</li></ul><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br></pre></td></tr></table></figure><ol><li><strong>添加Docker仓库</strong></li></ol><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure><blockquote><ul><li>yum-config-manager：一个管理yum配置的命令行工具；</li><li>—add-repo：添加新的软件仓库，后面的链接为Docker软件仓库；</li></ul></blockquote><ol><li><strong>安装Docker最新版本（若想要安装指定版本，跳过3直接看4）</strong></li></ol><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br></pre></td></tr></table></figure><blockquote><p>这个命令安装了 Docker，但是没有启动 Docker。</p><p>它还创建了一个 docker 组，但是默认情况下它不会将任何用户添加到组中。</p></blockquote><ol><li><strong>安装指定版本（若想直接安装最新版本，看3即可）</strong></li></ol><ul><li>首先执行下面命令列出仓库中可用的版本，显示的第二列就是可用的版本，如图所示。</li></ul><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum list docker-ce --showduplicates | sort -r</span><br></pre></td></tr></table></figure><p><img src="https://fb48e8e1.telegraph-image-bm7.pages.dev/file/6ed2870a9b8112d6db512.png" alt="img"></p><ul><li>执行安装命令，将自己想要安装的版本替换掉命令中的<VERSION_STRING>即可，例如 <code>docker-ce-3:26.1.3-1.el8</code>。</li></ul><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce-&lt;VERSION_STRING&gt; docker-ce-cli-&lt;VERSION_STRING&gt; containerd.io docker-buildx-plugin docker-compose-plugin</span><br></pre></td></tr></table></figure><blockquote><p>现在Docker就已经安装完成了</p></blockquote><h1 id="4-启动Docker"><a href="#4-启动Docker" class="headerlink" title="4. 启动Docker"></a>4. <strong>启动Docker</strong></h1><ol><li><strong>执行启动命令并验证是否启动成功。</strong></li></ol><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure><ol><li><strong>如果启动成功，会得到下图的效果。</strong></li></ol><p><img src="https://fb48e8e1.telegraph-image-bm7.pages.dev/file/c9b69496cdf87b2c818f7.png" alt=""></p><h1 id="5-END"><a href="#5-END" class="headerlink" title="5. END"></a>5. <strong>END</strong></h1><p>到这里整个Docker的安装和启动就结束了🍀🍀🍀</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;1-前置说明&quot;&gt;&lt;a href=&quot;#1-前置说明&quot; class=&quot;headerlink&quot; title=&quot;1. 前置说明&quot;&gt;&lt;/a&gt;1. &lt;strong&gt;前置说明&lt;/strong&gt;&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;本文使用阿里云ECS服务器，系统为Alibaba Clou</summary>
+      
+    
+    
+    
+    <category term="Docker" scheme="https://mrmancoder.top/categories/Docker/"/>
+    
+    
+    <category term="Linux" scheme="https://mrmancoder.top/tags/Linux/"/>
+    
+    <category term="Docker" scheme="https://mrmancoder.top/tags/Docker/"/>
+    
+    <category term="环境搭建" scheme="https://mrmancoder.top/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="https://mrmancoder.github.io/posts/4a17b156.html"/>
-    <id>https://mrmancoder.github.io/posts/4a17b156.html</id>
+    <link href="https://mrmancoder.top/posts/4a17b156.html"/>
+    <id>https://mrmancoder.top/posts/4a17b156.html</id>
     <published>2024-05-12T05:05:49.929Z</published>
     <updated>2024-05-12T07:34:01.662Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
       
