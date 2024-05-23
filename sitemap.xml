@@ -38,6 +38,15 @@
   </url>
   
   <url>
+    <loc>https://mrmancoder.top/posts/6b1c661d.html</loc>
+    
+    <lastmod>2024-05-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mrmancoder.top/categories/index.html</loc>
     
     <lastmod>2024-05-23</lastmod>
@@ -76,10 +85,38 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://mrmancoder.top/tags/Redis/</loc>
+    <lastmod>2024-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrmancoder.top/tags/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</loc>
+    <lastmod>2024-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
     <loc>https://mrmancoder.top/categories/Docker/</loc>
+    <lastmod>2024-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrmancoder.top/categories/Redis/</loc>
+    <lastmod>2024-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrmancoder.top/categories/Redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</loc>
     <lastmod>2024-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
