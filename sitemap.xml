@@ -29,24 +29,6 @@
   </url>
   
   <url>
-    <loc>https://mrmancoder.top/categories/index.html</loc>
-    
-    <lastmod>2024-12-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrmancoder.top/posts/96e9ca9a.html</loc>
-    
-    <lastmod>2024-12-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mrmancoder.top/posts/4a17b156.html</loc>
     
     <lastmod>2024-12-29</lastmod>
@@ -57,6 +39,24 @@
   
   <url>
     <loc>https://mrmancoder.top/posts/6b1c661d.html</loc>
+    
+    <lastmod>2024-12-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrmancoder.top/posts/105f9113.html</loc>
+    
+    <lastmod>2024-12-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrmancoder.top/categories/index.html</loc>
     
     <lastmod>2024-12-29</lastmod>
     
@@ -139,7 +139,7 @@
   </url>
   
   <url>
-    <loc>https://mrmancoder.top/categories/Kafka/</loc>
+    <loc>https://mrmancoder.top/categories/kafka/</loc>
     <lastmod>2024-12-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -147,6 +147,13 @@
   
   <url>
     <loc>https://mrmancoder.top/categories/Redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</loc>
+    <lastmod>2024-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrmancoder.top/categories/kafka/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</loc>
     <lastmod>2024-12-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
