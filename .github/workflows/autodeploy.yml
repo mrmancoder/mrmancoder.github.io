@@ -57,7 +57,7 @@ jobs:
       - name: 部署到Github
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: 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
+          token: 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
           repository-name: mrmancoder/mrmancoder.github.io
           branch: main
           folder: public
